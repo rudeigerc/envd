@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: 1.18
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
       - name: Cache Go modules
         uses: actions/cache@preview
         with:
@@ -44,7 +44,7 @@ jobs:
         run: |
           make addlicense && git add pkg cmd &&
           git diff --cached --exit-code || (echo 'Please run "make addlicense" to verify govet' && exit 1);
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11.0-beta.3'
@@ -66,7 +66,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
@@ -99,7 +99,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
@@ -132,7 +132,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
@@ -157,7 +157,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
